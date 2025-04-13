@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    gap: 40px;
+}
+
+.tools, .workflow {
+    flex: 1;
+}
+
+h1 {
+    font-family: 'Comfortaa', cursive;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.tool-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tool {
+    background-color: #3498db;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: move;
+    user-select: none;
+    transition: opacity 0.2s;
+    width: 100px; /* Fixed width for consistent snapping */
+}
+/* 
+.tool.dragging {
+    opacity: 0.5;
+} */
+
+.dropzone {
+    width: 800px;
+    height: 600px;
+    border: 3px dashed #7f8c8d;
+    border-radius: 10px;
+    position: relative;
+    padding: 10px;
+    background-color: #ecf0f1;
+    overflow: auto; /* Handle overflow if many tools are added */
+}
+
+.dropzone.snapped {
+    border-color: #2ecc71;
+}
+
+.tool.snapped {
+    position: absolute;
+    z-index: 10;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+}
